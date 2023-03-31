@@ -22,6 +22,7 @@ function onFormInput(e) {
 function onFormSubmit(e) {
   e.preventDefault();
   e.currentTarget.reset();
+  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   localStorage.removeItem(STORAGE_KEY);
 }
 
