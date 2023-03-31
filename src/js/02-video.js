@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 
 const player = new Player(document.querySelector('#vimeo-player'));
 
-savedCurrentTime();
+currentTime();
 
 player.on('timeupdate', throttle(onPlayClick, 1000));
 
@@ -11,9 +11,9 @@ function onPlayClick(e) {
   localStorage.setItem('videoplayer-current-time', e.seconds);
 }
 
-function savedCurrentTime() {
-  const currentTime = localStorage.getItem('videoplayer-current-time');
-  if (currentTime) {
+function currentTime() {
+  const savedTime = localStorage.getItem('videoplayer-current-time');
+  if (savedTime) {
     player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
   }
 }
