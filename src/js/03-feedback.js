@@ -25,6 +25,7 @@ function onFormSubmit(e) {
     e.currentTarget.reset();
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     localStorage.removeItem(STORAGE_KEY);
+    Object.keys(formData).forEach(key => delete formData[key]);
   } else alert('Заповніть всі поля!');
 }
 
