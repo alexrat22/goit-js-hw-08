@@ -37,7 +37,6 @@ function populateForm() {
 
     if (parsedData.email) {
       formData.email = parsedData.email;
-      console.log(formData.email);
     } else formData.email = '';
 
     if (parsedData.message) {
